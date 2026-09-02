@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#EB246B">
+  <meta name="description" content="Medagg acts as an aggregator between various individual entities in the healthcare industry and helps them synergise their competencies to create a healthy tomorrow.">
+  <link rel="shortcut icon" href="assets/images/medagg_favicon_32px.png" type="image/png">
+  <title>Medagg Ventures — Modern Healthcare Strategy, Operations & Advisory</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- ==================== STICKY HEADER ==================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="MedAgg Ventures Home">
+        <img src="assets/images/medagg-logo-black.svg" alt="MedAgg Ventures Logo" width="160" height="38">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-haspopup="true">
+              <span>COMPANY</span>
+              <svg class="nav-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="nav-dropdown" aria-label="Company Submenu">
+              <li><a href="about-us.html" class="dropdown-link">About Us</a></li>
+              <li><a href="careers.html" class="dropdown-link">Careers</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-haspopup="true">
+              <span>SERVICES</span>
+              <svg class="nav-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="nav-dropdown" aria-label="Services Submenu">
+              <li><a href="strategic-consulting.html" class="dropdown-link">Strategic Consulting</a></li>
+              <li><a href="transaction-advisory.html" class="dropdown-link">Transaction Advisory</a></li>
+              <li><a href="om-contracts.html" class="dropdown-link">O&M Contracts</a></li>
+              <li><a href="channel-partnerships.html" class="dropdown-link">Channel Partnerships</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="investments.html" class="nav-link">STRATEGIC INVESTMENTS</a>
+          </li>
+
+                    <li class="nav-item">
+            <a href="https://www.medagg.com/blogs/" target="_blank" rel="noopener noreferrer" class="nav-link">BLOG</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Action & Mobile Menu Toggle -->
+      <div class="header-actions">
+        <div class="header-social-links">
+          <a href="https://www.facebook.com/Medagg.ventures/" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/medagg.ventures/" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://in.linkedin.com/company/medagg-ventures-llp" target="_blank" rel="noopener noreferrer" class="header-social-link" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-sm">GET IN TOUCH</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer & Backdrop -->
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-list">
+      <div class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-link is-active">HOME</a>
+      </div>
+      <div class="mobile-nav-item">
+        <div class="mobile-nav-link">COMPANY</div>
+        <div class="mobile-submenu">
+          <a href="about-us.html" class="mobile-submenu-link">About Us</a>
+          <a href="careers.html" class="mobile-submenu-link">Careers</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <div class="mobile-nav-link">SERVICES</div>
+        <div class="mobile-submenu">
+          <a href="strategic-consulting.html" class="mobile-submenu-link">Strategic Consulting</a>
+          <a href="transaction-advisory.html" class="mobile-submenu-link">Transaction Advisory</a>
+          <a href="om-contracts.html" class="mobile-submenu-link">O&M Contracts</a>
+          <a href="channel-partnerships.html" class="mobile-submenu-link">Channel Partnerships</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <a href="investments.html" class="mobile-nav-link">STRATEGIC INVESTMENTS</a>
+      </div>
+            <div class="mobile-nav-item">
+        <a href="https://www.medagg.com/blogs/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">BLOG</a>
+      </div>
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">CONTACT</a>
+      </div>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <a href="contact.html" class="btn btn-primary" style="width:100%;">PARTNER WITH US</a>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main-content">
+    
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-slide-left">
+          <span class="badge-tag">HEALTHCARE AGGREGATOR & ADVISORY</span>
+          <h1 class="hero-heading">We help you redefine yourself</h1>
+          <p class="hero-lead">
+            Medagg acts as an aggregator between various individual entities in the healthcare industry and helps them synergise their competencies to create a healthy tomorrow.
+          </p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg">
+              <span>PARTNER WITH US</span>
+              <svg class="btn-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#services" class="btn btn-outline btn-lg">EXPLORE SERVICES</a>
+          </div>
+        </div>
+
+        <div class="hero-media-wrap reveal-slide-right delay-1">
+          <div class="hero-image-frame">
+            <img src="assets/images/home/consolidate_healthcare.jpg" alt="Medagg - Healthcare Aggregator & Advisory" width="600" height="420">
+          </div>
+          <div class="hero-floating-card">
+            <div class="hero-floating-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div>
+              <div class="hero-floating-text">Operational Excellence</div>
+              <div class="hero-floating-sub">Measurable Business Outcomes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERVICES SECTION (01 - 04) -->
+    <section class="section section-subtle" id="services">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="badge-tag">WHAT WE DO</span>
+          <h2>Our Core Capabilities</h2>
+          <p class="lead">Strategic solutions tailored for hospital chains, standalone facilities, diagnostic networks, and healthcare investors.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Card 01: Strategic Consulting -->
+          <div class="service-card reveal-zoom delay-1">
+            <div>
+              <div class="service-card-header">
+                <span class="service-card-number">01</span>
+                <div class="service-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+              </div>
+              <h3 class="service-card-title">Strategic Consulting</h3>
+              <p class="service-card-desc">
+                We work with standalone hospitals and smaller chains to redesign their operating strategies to improve operational efficiencies and financial viability.
+              </p>
+            </div>
+            <div class="service-card-footer">
+              <a href="strategic-consulting.html" class="service-card-link">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 02: Transaction Advisory -->
+          <div class="service-card reveal-zoom delay-2">
+            <div>
+              <div class="service-card-header">
+                <span class="service-card-number">02</span>
+                <div class="service-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                </div>
+              </div>
+              <h3 class="service-card-title">Transaction Advisory</h3>
+              <p class="service-card-desc">
+                We assist hospital owners, private equity investors and lenders during mergers, acquisitions and divestments to arrive at the right valuation for the business and identify improvement opportunities.
+              </p>
+            </div>
+            <div class="service-card-footer">
+              <a href="transaction-advisory.html" class="service-card-link">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 03: O&M Contracts -->
+          <div class="service-card reveal-zoom delay-1">
+            <div>
+              <div class="service-card-header">
+                <span class="service-card-number">03</span>
+                <div class="service-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+              </div>
+              <h3 class="service-card-title">O&M Contracts</h3>
+              <p class="service-card-desc">
+                We manage hospitals on a long-term operations & management contract, enabling standalone hospitals to benefit from operational scale.
+              </p>
+            </div>
+            <div class="service-card-footer">
+              <a href="om-contracts.html" class="service-card-link">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 04: Channel Partnerships -->
+          <div class="service-card reveal-zoom delay-2">
+            <div>
+              <div class="service-card-header">
+                <span class="service-card-number">04</span>
+                <div class="service-card-icon">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+              </div>
+              <h3 class="service-card-title">Channel Partnerships</h3>
+              <p class="service-card-desc">
+                We forge commercial partnerships between single-specialty chains and independent hospitals to set up dedicated speciality departments.
+              </p>
+            </div>
+            <div class="service-card-footer">
+              <a href="channel-partnerships.html" class="service-card-link">
+                <span>LEARN MORE</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDITORIAL SPLIT SECTION -->
+    <section class="section section-white">
+      <div class="container split-section">
+        <div class="split-content reveal-slide-left">
+          <span class="badge-tag">VALUE ACCELERATION</span>
+          <h2>Turn prospects into profits</h2>
+          <p class="lead">
+            We help you implement sustainable frameworks that reduce operational drag, maximize asset utilization, and position your healthcare organization for long-term profitable expansion.
+          </p>
+          <div style="margin-top: 16px;">
+            <a href="contact.html" class="btn btn-secondary btn-lg">GET IN TOUCH</a>
+          </div>
+        </div>
+
+        <div class="split-media-frame reveal-slide-right delay-1">
+          <img src="assets/images/home/strategic_consulting.jpg" alt="Turn prospects into profits" width="650" height="513">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CLIENTS & TRUST SECTION -->
+    <section class="section section-subtle">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="badge-tag">TRUSTED NETWORK</span>
+          <h2>Our Clients & Partners</h2>
+          <p class="lead">We have worked with marquee institutional healthcare providers, top hospital networks, and premier global investors.</p>
+        </div>
+
+        <!-- Single Row Client Marquee Track -->
+        <div class="clients-marquee-wrapper">
+          <div class="clients-marquee-track">
+            <div class="client-logo-card"><img src="assets/images/clients/temasek.png" alt="Temasek" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/breach_candy.png" alt="Breach Candy Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/dr_agarwals.png" alt="Dr. Agarwal's Eye Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/everstone.png" alt="Everstone Capital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/hcg.png" alt="HCG Oncology" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/kkr.png" alt="KKR" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/rela.png" alt="Dr. Rela Institute" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sahyadri.png" alt="Sahyadri Hospitals" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sooriya_hospital.png" alt="Sooriya Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sri_ramakrishna.png" alt="Sri Ramakrishna Hospital" class="client-logo-img"></div>
+            <!-- Duplicate set for seamless continuous loop -->
+            <div class="client-logo-card"><img src="assets/images/clients/temasek.png" alt="Temasek" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/breach_candy.png" alt="Breach Candy Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/dr_agarwals.png" alt="Dr. Agarwal's Eye Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/everstone.png" alt="Everstone Capital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/hcg.png" alt="HCG Oncology" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/kkr.png" alt="KKR" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/rela.png" alt="Dr. Rela Institute" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sahyadri.png" alt="Sahyadri Hospitals" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sooriya_hospital.png" alt="Sooriya Hospital" class="client-logo-img"></div>
+            <div class="client-logo-card"><img src="assets/images/clients/sri_ramakrishna.png" alt="Sri Ramakrishna Hospital" class="client-logo-img"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONVERSION BANNER CTA -->
+    <section class="section section-white">
+      <div class="container">
+        <div class="conversion-banner reveal-on-scroll">
+          <h2 class="conversion-title">We believe in building bridges</h2>
+          <p class="conversion-subtitle">
+            Create an opportunity for your organization to engage itself in a collaborative environment
+          </p>
+          <div class="conversion-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg">PARTNER WITH US</a>
+            <a href="about-us.html" class="btn btn-outline-white btn-lg">ABOUT OUR LEADERSHIP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="assets/images/medagg-logo-black.svg" alt="MedAgg Ventures" class="footer-logo">
+          </a>
+          <p class="footer-brand-desc">
+            Medagg acts as an aggregator between various individual entities in the healthcare industry and helps them synergise their competencies to create a healthy tomorrow.
+          </p>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <div class="footer-links">
+            <a href="about-us.html" class="footer-link">About Us</a>
+            <a href="careers.html" class="footer-link">Careers</a>
+            <a href="investments.html" class="footer-link">Strategic Investments</a>
+                        <a href="https://www.medagg.com/blogs/" target="_blank" rel="noopener noreferrer" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <div class="footer-links">
+            <a href="strategic-consulting.html" class="footer-link">Strategic Consulting</a>
+            <a href="transaction-advisory.html" class="footer-link">Transaction Advisory</a>
+            <a href="om-contracts.html" class="footer-link">O&M Contracts</a>
+            <a href="channel-partnerships.html" class="footer-link">Channel Partnerships</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:contact@medagg.com">contact@medagg.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="footer-contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div>
+              <a href="tel:+917506264440">+91 75062 64440</a><br>
+              <a href="tel:+919962113344">+91 99621 13344</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="footer-bottom-flex">
+        <p style="margin:0;">Copyright © 2023 Medagg Ventures LLP. All Rights Reserved.</p>
+        <div class="footer-social-list">
+          <a href="https://www.facebook.com/Medagg.ventures/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/medagg.ventures/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://in.linkedin.com/company/medagg-ventures-llp" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
