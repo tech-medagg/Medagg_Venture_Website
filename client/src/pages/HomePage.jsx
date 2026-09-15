@@ -115,7 +115,7 @@ export const HomePage = () => {
                     width: '100%',
                     height: '240px',
                     objectFit: 'cover',
-                    objectPosition: 'center top',
+                    objectPosition: 'left top',
                     display: 'block',
                   }}
                 />
@@ -222,7 +222,7 @@ export const HomePage = () => {
           <div className="reveal-slide-right delay-1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'start' }}>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(15,29,64,0.12)' }}>
               <img
-                src="/assets/images/careers_img1.jpg"
+                src="/assets/images/services/om_small_parallax.jpg"
                 alt="Medagg team at work"
                 style={{ width: '100%', height: '280px', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
               />
