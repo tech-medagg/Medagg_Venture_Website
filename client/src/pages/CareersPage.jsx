@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { JobApplyModal } from '../components/careers/JobApplyModal';
-import { jobsData } from '../data/jobsData';
+import { AddJobModal } from '../components/careers/AddJobModal';
+import { getJobs, deleteJob } from '../services/jobsService';
 import { SEO } from '../components/common/SEO';
-import { MapPin, Briefcase, Clock, ArrowRight, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { MapPin, Briefcase, Clock, ArrowRight, HeartHandshake, CheckCircle2, Plus, Trash2 } from 'lucide-react';
 
 export const CareersPage = () => {
+  const [jobsList, setJobsList] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  useEffect(() => {
+    setJobsList(getJobs());
+  }, []);
+
+  const handleJobsUpdated = (updatedJobs) => {
+    setJobsList(updatedJobs || getJobs());
+  };
+
+  const handleDeleteJob = (e, jobId) => {
+    e.stopPropagation();
+    if (window.confirm('Are you sure you want to remove this job listing from live site?')) {
+      const updated = deleteJob(jobId);
+      setJobsList(updated);
+    }
+  };
 
   const handleOpenJob = (job) => {
     setSelectedJob(job);
@@ -96,14 +115,27 @@ export const CareersPage = () => {
       {/* 3. AVAILABLE OPENINGS */}
       <section className="section section-subtle" id="openings">
         <div className="container">
-          <SectionHeading
-            badge="OPPORTUNITIES"
-            title="Available Openings"
-            subtitle="Join our team of healthcare strategists, operational leaders, and clinical consultants."
-          />
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '32px' }}>
+            <div>
+              <span className="badge-tag">OPPORTUNITIES</span>
+              <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginTop: '8px', color: 'var(--color-navy-dark)' }}>Available Openings</h2>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem', marginTop: '6px' }}>
+                Join our team of healthcare strategists, operational leaders, and clinical consultants.
+              </p>
+            </div>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => setIsAddModalOpen(true)}
+              style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '16px' }}
+            >
+              <Plus size={18} />
+              <span>POST NEW JOB</span>
+            </button>
+          </div>
 
           <div className="grid grid-3" style={{ gap: '24px' }}>
-            {jobsData.map((job) => (
+            {jobsList.map((job) => (
               <div
                 key={job.id}
                 className="feature-card"
@@ -111,6 +143,7 @@ export const CareersPage = () => {
                   justifyContent: 'space-between',
                   display: 'flex',
                   flexDirection: 'column',
+                  position: 'relative',
                 }}
               >
                 <div>
@@ -125,15 +158,31 @@ export const CareersPage = () => {
                     <span className="badge-tag" style={{ fontSize: '0.75rem' }}>
                       {job.department}
                     </span>
-                    <span
-                      style={{
-                        fontSize: '0.8rem',
-                        color: 'var(--color-text-muted)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {job.type}
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      {job.isCustom && (
+                        <span
+                          style={{
+                            fontSize: '0.7rem',
+                            fontWeight: 700,
+                            padding: '2px 8px',
+                            borderRadius: '12px',
+                            backgroundColor: '#dcfce7',
+                            color: '#15803d',
+                          }}
+                        >
+                          NEW OPENING
+                        </span>
+                      )}
+                      <span
+                        style={{
+                          fontSize: '0.8rem',
+                          color: 'var(--color-text-muted)',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {job.type}
+                      </span>
+                    </div>
                   </div>
 
                   <h3 className="feature-card-title">{job.title}</h3>
@@ -165,16 +214,38 @@ export const CareersPage = () => {
                     marginTop: '24px',
                     paddingTop: '16px',
                     borderTop: '1px solid var(--color-border-subtle)',
+                    display: 'flex',
+                    gap: '8px',
                   }}
                 >
                   <button
                     type="button"
                     className="btn btn-outline btn-sm"
                     onClick={() => handleOpenJob(job)}
-                    style={{ width: '100%' }}
+                    style={{ flex: 1 }}
                   >
                     View Job & Apply
                   </button>
+                  {job.isCustom && (
+                    <button
+                      type="button"
+                      onClick={(e) => handleDeleteJob(e, job.id)}
+                      title="Remove Job Listing"
+                      style={{
+                        padding: '8px',
+                        border: '1px solid #fecdd3',
+                        backgroundColor: '#fff1f2',
+                        color: '#e11d48',
+                        borderRadius: 'var(--radius-sm)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -208,6 +279,14 @@ export const CareersPage = () => {
           setSelectedJob(null);
         }}
       />
+
+      {/* POST NEW JOB MODAL */}
+      <AddJobModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onJobAdded={handleJobsUpdated}
+      />
     </div>
   );
 };
+
