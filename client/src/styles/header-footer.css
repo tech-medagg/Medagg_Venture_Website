@@ -108,13 +108,13 @@
 }
 
 .nav-link:hover,
-.nav-item:hover > .nav-link {
+.nav-item:hover>.nav-link {
   color: var(--color-brand-pink);
   background-color: transparent;
 }
 
 .nav-link:hover::after,
-.nav-item:hover > .nav-link::after {
+.nav-item:hover>.nav-link::after {
   transform: scaleX(1);
   transform-origin: left center;
 }
@@ -392,12 +392,29 @@
   transform: translateY(0);
 }
 
-.mobile-nav-fullscreen-overlay.is-open .stagger-1 { transition-delay: 0.08s; }
-.mobile-nav-fullscreen-overlay.is-open .stagger-2 { transition-delay: 0.14s; }
-.mobile-nav-fullscreen-overlay.is-open .stagger-3 { transition-delay: 0.20s; }
-.mobile-nav-fullscreen-overlay.is-open .stagger-4 { transition-delay: 0.26s; }
-.mobile-nav-fullscreen-overlay.is-open .stagger-5 { transition-delay: 0.32s; }
-.mobile-nav-fullscreen-overlay.is-open .stagger-6 { transition-delay: 0.38s; }
+.mobile-nav-fullscreen-overlay.is-open .stagger-1 {
+  transition-delay: 0.08s;
+}
+
+.mobile-nav-fullscreen-overlay.is-open .stagger-2 {
+  transition-delay: 0.14s;
+}
+
+.mobile-nav-fullscreen-overlay.is-open .stagger-3 {
+  transition-delay: 0.20s;
+}
+
+.mobile-nav-fullscreen-overlay.is-open .stagger-4 {
+  transition-delay: 0.26s;
+}
+
+.mobile-nav-fullscreen-overlay.is-open .stagger-5 {
+  transition-delay: 0.32s;
+}
+
+.mobile-nav-fullscreen-overlay.is-open .stagger-6 {
+  transition-delay: 0.38s;
+}
 
 .mobile-nav-link-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -504,7 +521,7 @@
 }
 
 .footer-logo {
-  height: 72px;
+  height: 80px;
   width: auto;
   max-width: 280px;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
@@ -620,12 +637,16 @@
 
 /* Responsive Header & Footer */
 @media (max-width: 1024px) {
-  .nav-desktop, .header-social-links {
+
+  .nav-desktop,
+  .header-social-links {
     display: none;
   }
+
   .mobile-nav-toggle {
     display: flex;
   }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -637,18 +658,22 @@
     height: 64px;
     max-height: 64px;
   }
+
   .site-header.is-scrolled .site-logo img {
     height: 54px;
     max-height: 54px;
   }
+
   .footer-logo {
     height: 62px;
     max-width: 240px;
   }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
   .footer-bottom-flex {
     flex-direction: column;
     gap: 16px;

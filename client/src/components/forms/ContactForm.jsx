@@ -23,9 +23,14 @@ export const ContactForm = () => {
       errs.email = 'Please enter a valid email address';
     }
     if (!formData.phone.trim()) {
-      errs.phone = 'Please enter your 10-digit mobile number';
-    } else if (!/^\d{10}$/.test(formData.phone.replace(/[\s\-\+]/g, ''))) {
-      errs.phone = 'Please enter a valid 10-digit mobile number';
+      errs.phone = 'Please enter your mobile number';
+    } else {
+      const digits = formData.phone.replace(/\D/g, '');
+      const isValid =
+        digits.length === 10 ||
+        (digits.length === 12 && digits.startsWith('91')) ||
+        (digits.length === 11 && digits.startsWith('0'));
+      if (!isValid) errs.phone = 'Please enter a valid Indian mobile number (10 digits)';
     }
     return errs;
   };
@@ -200,7 +205,7 @@ export const ContactForm = () => {
             marginBottom: '8px',
           }}
         >
-          Mobile Number * (10 Digits)
+          Mobile Number *
         </label>
         <input
           type="tel"
@@ -208,7 +213,7 @@ export const ContactForm = () => {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="9876543210"
+          placeholder="e.g. 9876543210"
           maxLength={14}
           className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
           style={{

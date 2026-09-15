@@ -142,7 +142,7 @@ export const HomePage = () => {
               </div>
 
               {/* Floating badge */}
-              <div className="hero-floating-card" style={{ bottom: '16px', left: '-16px' }}>
+              <div className="hero-floating-card" style={{ bottom: '20px', left: '20px' }}>
                 <div className="hero-floating-icon">
                   <CheckCircle2 size={22} />
                 </div>

@@ -9,6 +9,7 @@
 
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from './emailConfig';
+import { sendLeadToTeleCRM } from './telecrm';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -22,10 +23,19 @@ const isConfigured = () =>
   EMAILJS_CONFIG.PUBLIC_KEY !== 'your_public_key_here';
 
 /**
- * Submit a contact/inquiry form via EmailJS.
+ * Submit a contact/inquiry form via EmailJS & TeleCRM Async API.
  * Template variables: from_name, from_email, phone, service, message, to_email
  */
 export const submitInquiry = async (formData) => {
+  // Push lead to TeleCRM Async API
+  sendLeadToTeleCRM({
+    name: formData.name,
+    phone: formData.phone,
+    email: formData.email,
+    message: formData.message,
+    service: formData.service || 'Contact Page Inquiry',
+  }).catch((err) => console.error('[TeleCRM Ingestion Error]:', err));
+
   if (!isConfigured()) {
     // Fallback mock when EmailJS is not yet configured
     console.warn('[Medagg] EmailJS not configured. Using mock. See client/src/services/emailConfig.js for setup.');
@@ -67,6 +77,15 @@ export const submitInquiry = async (formData) => {
  * Template variables: job_role, from_name, from_email, phone, experience, linkedin_url, cover_note, to_email
  */
 export const submitApplication = async (formData) => {
+  // Push application lead to TeleCRM Async API
+  sendLeadToTeleCRM({
+    name: formData.from_name,
+    phone: formData.phone,
+    email: formData.from_email,
+    message: `Career Application: ${formData.jobRole || 'General'}. Exp: ${formData.experience || 'N/A'}. LinkedIn: ${formData.linkedin_url || 'N/A'}. Note: ${formData.cover_note || 'N/A'}`,
+    service: `Career Application - ${formData.jobRole || 'General'}`,
+  }).catch((err) => console.error('[TeleCRM Career Lead Ingestion Error]:', err));
+
   if (!isConfigured()) {
     // Fallback mock when EmailJS is not yet configured
     console.warn('[Medagg] EmailJS not configured. Using mock. See client/src/services/emailConfig.js for setup.');

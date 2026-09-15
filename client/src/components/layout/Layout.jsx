@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MobileNavDrawer } from './MobileNavDrawer';
+import { ScrollToTop } from '../common/ScrollToTop';
 
 export const Layout = ({ children }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -32,6 +33,7 @@ export const Layout = ({ children }) => {
       />
       <main className="main-content">{children}</main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
