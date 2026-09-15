@@ -1,0 +1,9 @@
+node_modules
+client/node_modules
+dist
+client/dist
+.DS_Store
+.npm-cache
+.env
+.env.local
+.env.production

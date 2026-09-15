@@ -1,0 +1,82 @@
+/* ==========================================================================
+   MedAgg Ventures — Global Master Stylesheet (React Client)
+   ========================================================================== */
+
+@import './styles/design-system.css';
+@import './styles/header-footer.css';
+@import './styles/components.css';
+@import './styles/pages.css';
+
+/* React Route Transitions & Utility Enhancements */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+/* Nav Link Active State Indicator */
+.nav-link.active,
+.mobile-nav-link.active,
+.mobile-submenu-link.active {
+  color: var(--color-brand-pink) !important;
+  font-weight: 700 !important;
+}
+
+/* Toast Notification System */
+.medagg-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #0A1128;
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  border-left: 4px solid var(--color-brand-pink);
+  animation: slideInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-width: 420px;
+}
+
+.medagg-toast.toast-success {
+  border-left-color: #10B981;
+}
+
+.medagg-toast.toast-error {
+  border-left-color: #EF4444;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Open Body Lock */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive Fixes & Polishes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
