@@ -2,31 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { JobApplyModal } from '../components/careers/JobApplyModal';
-import { AddJobModal } from '../components/careers/AddJobModal';
+import { ConfirmDeleteModal } from '../components/careers/ConfirmDeleteModal';
 import { getJobs, deleteJob } from '../services/jobsService';
 import { SEO } from '../components/common/SEO';
-import { MapPin, Briefcase, Clock, ArrowRight, HeartHandshake, CheckCircle2, Plus, Trash2 } from 'lucide-react';
+import { MapPin, Briefcase, Clock, ArrowRight, CheckCircle2, Trash2 } from 'lucide-react';
 
 export const CareersPage = () => {
   const [jobsList, setJobsList] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  // Custom Delete Modal State
+  const [deletingJob, setDeletingJob] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   useEffect(() => {
     setJobsList(getJobs());
   }, []);
 
-  const handleJobsUpdated = (updatedJobs) => {
-    setJobsList(updatedJobs || getJobs());
+  const handleOpenDeleteModal = (e, job) => {
+    e.stopPropagation();
+    setDeletingJob(job);
+    setIsDeleteModalOpen(true);
   };
 
-  const handleDeleteJob = (e, jobId) => {
-    e.stopPropagation();
-    if (window.confirm('Are you sure you want to remove this job listing from live site?')) {
-      const updated = deleteJob(jobId);
-      setJobsList(updated);
-    }
+  const handleConfirmDelete = (jobId) => {
+    const updated = deleteJob(jobId);
+    setJobsList(updated);
+    setIsDeleteModalOpen(false);
+    setDeletingJob(null);
   };
 
   const handleOpenJob = (job) => {
@@ -50,6 +54,7 @@ export const CareersPage = () => {
         keywords="healthcare consulting jobs India, hospital management jobs, healthcare advisory careers, hospital consulting careers India, Medagg careers, healthcare strategy jobs India, hospital operations jobs"
         canonical="/careers"
       />
+
       {/* 1. HERO */}
       <section className="page-hero">
         <div className="container page-hero-grid">
@@ -115,23 +120,12 @@ export const CareersPage = () => {
       {/* 3. AVAILABLE OPENINGS */}
       <section className="section section-subtle" id="openings">
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '32px' }}>
-            <div>
-              <span className="badge-tag">OPPORTUNITIES</span>
-              <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginTop: '8px', color: 'var(--color-navy-dark)' }}>Available Openings</h2>
-              <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem', marginTop: '6px' }}>
-                Join our team of healthcare strategists, operational leaders, and clinical consultants.
-              </p>
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => setIsAddModalOpen(true)}
-              style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '16px' }}
-            >
-              <Plus size={18} />
-              <span>POST NEW JOB</span>
-            </button>
+          <div style={{ marginBottom: '32px' }}>
+            <span className="badge-tag">OPPORTUNITIES</span>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginTop: '8px', color: 'var(--color-navy-dark)' }}>Available Openings</h2>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem', marginTop: '6px' }}>
+              Join our team of healthcare strategists, operational leaders, and clinical consultants.
+            </p>
           </div>
 
           <div className="grid grid-3" style={{ gap: '24px' }}>
@@ -226,13 +220,14 @@ export const CareersPage = () => {
                   >
                     View Job & Apply
                   </button>
+
                   {job.isCustom && (
                     <button
                       type="button"
-                      onClick={(e) => handleDeleteJob(e, job.id)}
+                      onClick={(e) => handleOpenDeleteModal(e, job)}
                       title="Remove Job Listing"
                       style={{
-                        padding: '8px',
+                        padding: '8px 12px',
                         border: '1px solid #fecdd3',
                         backgroundColor: '#fff1f2',
                         color: '#e11d48',
@@ -241,6 +236,7 @@ export const CareersPage = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        transition: 'all 0.2s',
                       }}
                     >
                       <Trash2 size={16} />
@@ -280,13 +276,16 @@ export const CareersPage = () => {
         }}
       />
 
-      {/* POST NEW JOB MODAL */}
-      <AddJobModal
-        isOpen={isAddModalOpen}
-        onClose={() => setIsAddModalOpen(false)}
-        onJobAdded={handleJobsUpdated}
+      {/* CUSTOM DESIGNED DELETE CONFIRMATION POPUP */}
+      <ConfirmDeleteModal
+        isOpen={isDeleteModalOpen}
+        job={deletingJob}
+        onClose={() => {
+          setIsDeleteModalOpen(false);
+          setDeletingJob(null);
+        }}
+        onConfirm={handleConfirmDelete}
       />
     </div>
   );
 };
-

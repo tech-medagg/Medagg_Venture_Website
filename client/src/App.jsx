@@ -12,6 +12,7 @@ import { ChannelPartnershipsPage } from './pages/ChannelPartnershipsPage';
 import { InvestmentsPage } from './pages/InvestmentsPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { CareersPage } from './pages/CareersPage';
+import { PostJobPage } from './pages/PostJobPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -56,6 +57,12 @@ export const App = () => {
           {/* Careers & Contact */}
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers.html" element={<CareersPage />} />
+
+          {/* Admin Job Posting Page (Secret URL) */}
+          <Route path="/career-post-medagg" element={<PostJobPage />} />
+          <Route path="/career-post-medagg.html" element={<PostJobPage />} />
+          <Route path="/careers/post" element={<PostJobPage />} />
+          <Route path="/post-job" element={<PostJobPage />} />
 
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/contact.html" element={<ContactPage />} />
