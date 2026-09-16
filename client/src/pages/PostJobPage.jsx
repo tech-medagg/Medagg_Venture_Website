@@ -125,41 +125,23 @@ export const PostJobPage = () => {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '16px' }}>
             <div>
               <span className="page-hero-badge">CAREER MANAGEMENT PORTAL</span>
-              <h1 className="page-hero-title" style={{ fontSize: '2.5rem', marginBottom: '8px' }}>
+              <h1 className="page-hero-title" style={{ fontSize: 'clamp(1.65rem, 4.5vw, 2.5rem)', marginBottom: '8px' }}>
                 Post a Career JD
               </h1>
-              <p className="page-hero-desc" style={{ maxWidth: '650px' }}>
+              <p className="page-hero-desc" style={{ maxWidth: '650px', fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>
                 Publish new mandates, clinical consulting roles, or operational job descriptions live to the Medagg website feed in seconds.
               </p>
             </div>
 
             {/* TAB TOGGLE */}
-            <div
-              style={{
-                display: 'flex',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                padding: '4px',
-                borderRadius: 'var(--radius-md)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.2)',
-              }}
-            >
+            <div className="post-job-tab-toggle">
               <button
                 type="button"
+                className="post-job-tab-btn"
                 onClick={() => setActiveTab('form')}
                 style={{
-                  padding: '8px 16px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: 'none',
                   backgroundColor: activeTab === 'form' ? '#ffffff' : 'transparent',
                   color: activeTab === 'form' ? 'var(--color-brand-pink)' : '#ffffff',
-                  fontWeight: activeTab === 'form' ? 700 : 600,
-                  fontSize: '0.88rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'all 0.2s',
                   boxShadow: activeTab === 'form' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
                 }}
               >
@@ -170,20 +152,11 @@ export const PostJobPage = () => {
               </button>
               <button
                 type="button"
+                className="post-job-tab-btn"
                 onClick={() => setActiveTab('preview')}
                 style={{
-                  padding: '8px 16px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: 'none',
                   backgroundColor: activeTab === 'preview' ? '#ffffff' : 'transparent',
                   color: activeTab === 'preview' ? 'var(--color-brand-pink)' : '#ffffff',
-                  fontWeight: activeTab === 'preview' ? 700 : 600,
-                  fontSize: '0.88rem',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'all 0.2s',
                   boxShadow: activeTab === 'preview' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
                 }}
               >
@@ -259,15 +232,7 @@ export const PostJobPage = () => {
             <>
               {/* TAB 1: EDIT FORM */}
               {activeTab === 'form' && (
-                <div
-                  style={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '16px',
-                    padding: '36px',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.06)',
-                    border: '1px solid var(--color-border-subtle)',
-                  }}
-                >
+                <div className="post-job-card">
                   {/* SMART AUTO-IMPORTER TRIGGER */}
                   <div
                     style={{
@@ -558,7 +523,7 @@ export const PostJobPage = () => {
                     </div>
 
                     {/* ACTIONS */}
-                    <div style={{ marginTop: '16px', display: 'flex', gap: '16px', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                    <div className="post-job-actions" style={{ marginTop: '16px', display: 'flex', gap: '16px', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                       <button
                         type="button"
                         className="btn btn-outline"
