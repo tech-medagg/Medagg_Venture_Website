@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Page-Specific Layouts, Heroes, Conversion Banners & Zoom Transitions
    ========================================================================== */
 
@@ -314,7 +314,7 @@
 
 .service-hero-grid {
   display: grid;
-  /* Wider image column — matches the reference where images dominate the right half */
+  /* Wider image column Ã¢â‚¬â€ matches the reference where images dominate the right half */
   grid-template-columns: 1fr 1.35fr;
   gap: 48px;
   align-items: center;
@@ -378,7 +378,7 @@
   color: #FFFFFF;
 }
 
-/* ─── Service Hero Media — Dual-image stacked layout (matches reference) ─── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Service Hero Media Ã¢â‚¬â€ Dual-image stacked layout (matches reference) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .service-hero-media {
   position: relative;
   width: 100%;
@@ -390,7 +390,7 @@
   align-items: flex-start;
 }
 
-/* ── Main / back image — tall portrait, right-aligned ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Main / back image Ã¢â‚¬â€ tall portrait, right-aligned Ã¢â€â‚¬Ã¢â€â‚¬ */
 .service-hero-main-img {
   position: relative;
   z-index: 1;
@@ -418,7 +418,7 @@
   display: block;
 }
 
-/* ── Floating / front image — landscape, hangs lower-left ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Floating / front image Ã¢â‚¬â€ landscape, hangs lower-left Ã¢â€â‚¬Ã¢â€â‚¬ */
 .service-hero-floating-img {
   position: absolute;
   /* sits at ~50 % down and sticks out past the bottom of the main image */
@@ -451,7 +451,7 @@
   display: block;
 }
 
-/* ── Tablet / medium screens ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Tablet / medium screens Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (max-width: 991px) {
   .service-hero-grid {
     grid-template-columns: 1fr;
@@ -483,7 +483,7 @@
   }
 }
 
-/* ── Mobile ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Mobile Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (max-width: 576px) {
   .service-hero-heading {
     font-size: 1.85rem;
@@ -714,7 +714,7 @@
   }
 }
 
-/* ── Tablet (641px – 768px) ── */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Tablet (641px Ã¢â‚¬â€œ 768px) Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (max-width: 768px) {
   .hero-grid { gap: 32px; }
   .hero-media-wrap { order: 1; }
@@ -732,13 +732,13 @@
   .split-grid-img-2 { margin-top: 0 !important; }
 }
 
-/* ════════════════════════════════════════════════════
-   PREMIUM MOBILE REDESIGN — max-width: 640px
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   PREMIUM MOBILE REDESIGN Ã¢â‚¬â€ max-width: 640px
    Desktop layout is completely untouched.
-   ════════════════════════════════════════════════════ */
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 @media (max-width: 640px) {
 
-  /* ─ 1. HERO ─────────────────────────────────────── */
+  /* Ã¢â€â‚¬ 1. HERO Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .hero-section {
     padding: 28px 0 36px;
     background: linear-gradient(160deg, #F0F4FF 0%, #FDF4F8 50%, #F8FAFC 100%);
@@ -803,7 +803,7 @@
     border-radius: 999px;
   }
 
-  /* ─ Hero images: side-by-side grid ─ */
+  /* Ã¢â€â‚¬ Hero images: side-by-side grid Ã¢â€â‚¬ */
   .hero-media-wrap > div {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -822,7 +822,7 @@
     object-fit: cover !important;
   }
 
-  /* ─ Floating excellence badge ─ */
+  /* Ã¢â€â‚¬ Floating excellence badge Ã¢â€â‚¬ */
   .hero-floating-card {
     grid-column: 1 / -1 !important;
     position: relative !important;
@@ -849,7 +849,7 @@
   .hero-floating-text { font-size: 0.85rem; font-weight: 700; color: var(--color-navy-900); }
   .hero-floating-sub { font-size: 0.76rem; color: var(--color-text-muted); margin-top: 1px; }
 
-  /* ─ 2. SERVICES ─────────────────────────────────── */
+  /* Ã¢â€â‚¬ 2. SERVICES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .section { padding: 44px 0; }
   .section-header { margin-bottom: 24px; }
   .badge-tag { display: inline-flex; width: auto; }
@@ -865,8 +865,10 @@
   .service-card-desc   { font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; }
   .service-card-footer { padding-top: 14px; }
 
-  /* ─ 3. SPLIT ("Turn prospects into profits") ───── */
+  /* Ã¢â€â‚¬ 3. SPLIT ("Turn prospects into profits") Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .split-section { gap: 24px; }
+  /* Fix: VALUE ACCELERATION badge width on mobile */
+  .split-content .badge-tag { align-self: flex-start; max-width: fit-content; }
   .split-content h2 { font-size: clamp(1.35rem, 5.5vw, 1.75rem); margin-bottom: 10px; }
   .split-content .lead { font-size: 0.95rem; }
 
@@ -888,7 +890,7 @@
   }
   .split-grid-img-2 { margin-top: 0 !important; }
 
-  /* ─ 4. CLIENT LOGOS ─────────────────────────────── */
+  /* Ã¢â€â‚¬ 4. CLIENT LOGOS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .client-logo-card {
     flex: 0 0 172px;
     height: 86px;
@@ -897,7 +899,7 @@
   }
   .client-logo-img { max-height: 48px; max-width: 128px; }
 
-  /* ─ 5. CONVERSION BANNER ───────────────────────── */
+  /* Ã¢â€â‚¬ 5. CONVERSION BANNER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .conversion-banner {
     padding: 32px 18px;
     border-radius: 18px;
@@ -923,11 +925,54 @@
     padding: 13px 20px;
   }
 
-  /* ─ 6. PAGE HERO (inner pages) ─────────────────── */
+  /* Ã¢â€â‚¬ 6. PAGE HERO (inner pages) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   .page-hero { padding: 36px 0 44px; }
 
-  /* ─ 7. GLOBAL TYPE ──────────────────────────────── */
+  /* Ã¢â€â‚¬ 7. GLOBAL TYPE Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
   p.lead { font-size: 0.975rem; }
 }
 
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   POST JOB PAGE â€” Mobile Responsive (â‰¤ 900px)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@media (max-width: 900px) {
+  /* Stack form + published-jobs panel vertically */
+  .post-job-main-grid {
+    grid-template-columns: 1fr !important;
+  }
 
+  /* Remove sticky positioning on mobile */
+  .post-job-sidebar {
+    position: static !important;
+    top: auto !important;
+  }
+
+  /* Hero row: stack title block and tab toggle vertically */
+  .post-job-hero-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  .post-job-tab-toggle {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Shrink published-jobs sidebar max-height on small screens */
+  .post-job-sidebar-scroll {
+    max-height: 50vh !important;
+  }
+
+  /* Preview card max-width: full on mobile */
+  .post-job-preview-card {
+    max-width: 100% !important;
+  }
+
+  /* Form card padding tighter on mobile */
+  .post-job-card {
+    padding: 20px 16px !important;
+  }
+}

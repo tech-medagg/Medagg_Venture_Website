@@ -153,7 +153,7 @@ export const PostJobPage = () => {
           >
             <ArrowLeft size={16} /> Back to Careers Feed
           </Link>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '16px' }}>
+          <div className="post-job-hero-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', gap: '16px' }}>
             <div>
               <span className="page-hero-badge">CAREER MANAGEMENT PORTAL</span>
               <h1 className="page-hero-title" style={{ fontSize: 'clamp(1.65rem, 4.5vw, 2.5rem)', marginBottom: '8px' }}>
@@ -204,7 +204,7 @@ export const PostJobPage = () => {
       {/* MAIN CONTENT — two-column: form left, published jobs right */}
       <section className="section section-subtle" style={{ minHeight: '600px' }}>
         <div
-          className="container"
+          className="container post-job-main-grid"
           style={{
             maxWidth: '1300px',
             display: 'grid',
@@ -611,7 +611,7 @@ export const PostJobPage = () => {
 
                       {/* SAMPLE CARD */}
                       <div
-                        className="feature-card"
+                        className="feature-card post-job-preview-card"
                         style={{
                           backgroundColor: '#fafafa',
                           border: '1px solid #e2e8f0',
@@ -736,6 +736,7 @@ export const PostJobPage = () => {
           {/* ── RIGHT: PUBLISHED JOBS PANEL (admin manage) ── */}
           {!successMsg && (
             <div
+              className="post-job-sidebar"
               style={{
                 position: 'sticky',
                 top: '112px',
@@ -778,6 +779,7 @@ export const PostJobPage = () => {
 
                 {/* Jobs list */}
                 <div
+                  className="post-job-sidebar-scroll"
                   style={{
                     maxHeight: '68vh',
                     overflowY: 'auto',
