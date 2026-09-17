@@ -109,7 +109,7 @@ export const HomePage = () => {
                 border: '3px solid rgba(255,255,255,0.12)',
               }}>
                 <img
-                  src="/assets/images/about/our_strengths.jpg"
+                  src="/assets/images/careers_img2.jpg"
                   alt="Medagg leadership team"
                   style={{
                     width: '100%',
@@ -129,7 +129,7 @@ export const HomePage = () => {
                 border: '3px solid rgba(255,255,255,0.12)',
               }}>
                 <img
-                  src="/assets/images/careers_img2.jpg"
+                  src="/assets/images/about/our_strengths.jpg"
                   alt="Medagg team at work"
                   style={{
                     width: '100%',
@@ -142,7 +142,7 @@ export const HomePage = () => {
               </div>
 
               {/* Floating badge */}
-              <div className="hero-floating-card" style={{ bottom: '20px', left: '20px' }}>
+              <div className="hero-floating-card" style={{ bottom: '20px', left: '-150px' }}>
                 <div className="hero-floating-icon">
                   <CheckCircle2 size={22} />
                 </div>

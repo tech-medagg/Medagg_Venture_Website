@@ -714,34 +714,220 @@
   }
 }
 
-@media (max-width: 640px) {
-  .hero-section {
-    padding: 48px 0 64px;
-  }
-  .page-hero {
-    padding: 48px 0 56px;
-  }
+/* ── Tablet (641px – 768px) ── */
+@media (max-width: 768px) {
+  .hero-grid { gap: 32px; }
+  .hero-media-wrap { order: 1; }
+  .hero-offset-img-2 { margin-left: 16px !important; }
   .hero-floating-card {
-    position: relative;
-    bottom: auto;
-    left: auto;
+    position: relative !important;
+    bottom: auto !important;
+    left: 0 !important;
     margin-top: 16px;
+    width: 100%;
+    min-width: unset;
+    justify-content: flex-start;
+    animation: none;
   }
-  .hero-offset-img-2 {
+  .split-grid-img-2 { margin-top: 0 !important; }
+}
+
+/* ════════════════════════════════════════════════════
+   PREMIUM MOBILE REDESIGN — max-width: 640px
+   Desktop layout is completely untouched.
+   ════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* ─ 1. HERO ─────────────────────────────────────── */
+  .hero-section {
+    padding: 28px 0 36px;
+    background: linear-gradient(160deg, #F0F4FF 0%, #FDF4F8 50%, #F8FAFC 100%);
+  }
+  .hero-section::before {
+    width: 220px; height: 220px;
+    top: -50px; right: -20px;
+    background: radial-gradient(circle, rgba(235,36,107,0.11) 0%, transparent 70%);
+  }
+  .hero-section::after {
+    width: 180px; height: 180px;
+    bottom: -20px; left: 5%;
+    background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 70%);
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero-media-wrap { order: 1; }
+
+  /* Badge chip */
+  .hero-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px 5px 10px;
+    background: linear-gradient(90deg,rgba(235,36,107,0.12) 0%,rgba(235,36,107,0.05) 100%);
+    border: 1px solid rgba(235,36,107,0.25);
+    border-radius: 999px;
+    color: var(--color-brand-pink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  /* Heading & body */
+  .hero-heading {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+  .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* CTA buttons */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .hero-actions .btn {
+    justify-content: center;
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.875rem;
+  }
+  .hero-actions .btn-outline {
+    border-radius: 999px;
+  }
+
+  /* ─ Hero images: side-by-side grid ─ */
+  .hero-media-wrap > div {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    position: relative;
+  }
+  /* image wrappers */
+  .hero-media-wrap > div > div:not(.hero-floating-card) {
     margin-left: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden;
   }
-  .split-grid-img-2 {
+  .hero-media-wrap img {
+    height: 175px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* ─ Floating excellence badge ─ */
+  .hero-floating-card {
+    grid-column: 1 / -1 !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: 0 !important;
+    margin-top: 0;
+    width: 100%;
+    min-width: unset;
+    padding: 11px 15px;
+    gap: 12px;
+    border-radius: 14px;
+    animation: none;
+    background: linear-gradient(135deg,rgba(255,255,255,0.97) 0%,rgba(253,244,248,0.97) 100%);
+    border: 1px solid rgba(235,36,107,0.18);
+    box-shadow: 0 4px 18px rgba(235,36,107,0.11);
+  }
+  .hero-floating-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #EB246B 0%, #D81B60 100%);
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .hero-floating-text { font-size: 0.85rem; font-weight: 700; color: var(--color-navy-900); }
+  .hero-floating-sub { font-size: 0.76rem; color: var(--color-text-muted); margin-top: 1px; }
+
+  /* ─ 2. SERVICES ─────────────────────────────────── */
+  .section { padding: 44px 0; }
+  .section-header { margin-bottom: 24px; }
+  .badge-tag { display: inline-flex; width: auto; }
+
+  .service-card {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+  .service-card-header { margin-bottom: 12px; }
+  .service-card-number { width: 40px; height: 40px; font-size: 1.1rem; }
+  .service-card-icon   { width: 40px; height: 40px; }
+  .service-card-title  { font-size: 1.1rem; margin-bottom: 8px; }
+  .service-card-desc   { font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; }
+  .service-card-footer { padding-top: 14px; }
+
+  /* ─ 3. SPLIT ("Turn prospects into profits") ───── */
+  .split-section { gap: 24px; }
+  .split-content h2 { font-size: clamp(1.35rem, 5.5vw, 1.75rem); margin-bottom: 10px; }
+  .split-content .lead { font-size: 0.95rem; }
+
+  /* Side-by-side image pair */
+  .split-section > div[style*="grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .split-section > div[style*="grid"] > div {
     margin-top: 0 !important;
+    border-radius: 14px !important;
+    overflow: hidden;
   }
+  .split-section > div[style*="grid"] img {
+    height: 165px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+  .split-grid-img-2 { margin-top: 0 !important; }
+
+  /* ─ 4. CLIENT LOGOS ─────────────────────────────── */
+  .client-logo-card {
+    flex: 0 0 172px;
+    height: 86px;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+  .client-logo-img { max-height: 48px; max-width: 128px; }
+
+  /* ─ 5. CONVERSION BANNER ───────────────────────── */
   .conversion-banner {
-    padding: 36px 18px;
-    border-radius: var(--radius-lg);
+    padding: 32px 18px;
+    border-radius: 18px;
   }
   .conversion-title {
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    line-height: 1.22;
+    margin-bottom: 12px;
   }
   .conversion-subtitle {
-    font-size: 0.98rem;
-    margin-bottom: 24px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
   }
+  .conversion-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .conversion-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  /* ─ 6. PAGE HERO (inner pages) ─────────────────── */
+  .page-hero { padding: 36px 0 44px; }
+
+  /* ─ 7. GLOBAL TYPE ──────────────────────────────── */
+  p.lead { font-size: 0.975rem; }
 }
+
+

@@ -2,36 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { JobApplyModal } from '../components/careers/JobApplyModal';
-import { ConfirmDeleteModal } from '../components/careers/ConfirmDeleteModal';
-import { getJobs, deleteJob } from '../services/jobsService';
+import { getJobs } from '../services/jobsService';
 import { SEO } from '../components/common/SEO';
-import { MapPin, Briefcase, Clock, ArrowRight, CheckCircle2, Trash2 } from 'lucide-react';
+import { MapPin, Clock, CheckCircle2 } from 'lucide-react';
 
 export const CareersPage = () => {
   const [jobsList, setJobsList] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Custom Delete Modal State
-  const [deletingJob, setDeletingJob] = useState(null);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-
   useEffect(() => {
     setJobsList(getJobs());
   }, []);
-
-  const handleOpenDeleteModal = (e, job) => {
-    e.stopPropagation();
-    setDeletingJob(job);
-    setIsDeleteModalOpen(true);
-  };
-
-  const handleConfirmDelete = (jobId) => {
-    const updated = deleteJob(jobId);
-    setJobsList(updated);
-    setIsDeleteModalOpen(false);
-    setDeletingJob(null);
-  };
 
   const handleOpenJob = (job) => {
     setSelectedJob(job);
@@ -203,45 +185,22 @@ export const CareersPage = () => {
                   </div>
                 </div>
 
+                {/* No delete button — public view only */}
                 <div
                   style={{
                     marginTop: '24px',
                     paddingTop: '16px',
                     borderTop: '1px solid var(--color-border-subtle)',
-                    display: 'flex',
-                    gap: '8px',
                   }}
                 >
                   <button
                     type="button"
                     className="btn btn-outline btn-sm"
                     onClick={() => handleOpenJob(job)}
-                    style={{ flex: 1 }}
+                    style={{ width: '100%' }}
                   >
-                    View Job & Apply
+                    View Job &amp; Apply
                   </button>
-
-                  {job.isCustom && (
-                    <button
-                      type="button"
-                      onClick={(e) => handleOpenDeleteModal(e, job)}
-                      title="Remove Job Listing"
-                      style={{
-                        padding: '8px 12px',
-                        border: '1px solid #fecdd3',
-                        backgroundColor: '#fff1f2',
-                        color: '#e11d48',
-                        borderRadius: 'var(--radius-sm)',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'all 0.2s',
-                      }}
-                    >
-                      <Trash2 size={16} />
-                    </button>
-                  )}
                 </div>
               </div>
             ))}
@@ -253,9 +212,9 @@ export const CareersPage = () => {
       <section className="section section-white">
         <div className="container">
           <div className="conversion-banner">
-            <h2 className="conversion-title">We’re always on the lookout</h2>
+            <h2 className="conversion-title">We're always on the lookout</h2>
             <p className="conversion-subtitle">
-              Don’t see your exact role listed? Send us your CV or LinkedIn profile link and we’ll reach out when an aligned mandate opens up.
+              Don't see your exact role listed? Send us your CV or LinkedIn profile link and we'll reach out when an aligned mandate opens up.
             </p>
             <div className="conversion-actions">
               <Link to="/contact" className="btn btn-primary btn-lg">
@@ -274,17 +233,6 @@ export const CareersPage = () => {
           setIsModalOpen(false);
           setSelectedJob(null);
         }}
-      />
-
-      {/* CUSTOM DESIGNED DELETE CONFIRMATION POPUP */}
-      <ConfirmDeleteModal
-        isOpen={isDeleteModalOpen}
-        job={deletingJob}
-        onClose={() => {
-          setIsDeleteModalOpen(false);
-          setDeletingJob(null);
-        }}
-        onConfirm={handleConfirmDelete}
       />
     </div>
   );

@@ -1040,15 +1040,6 @@
 }
 
 @media (max-width: 640px) {
-  .client-logo-card {
-    flex: 0 0 220px;
-    height: 105px;
-    padding: 16px 22px;
-  }
-  .client-logo-img {
-    max-height: 56px;
-    max-width: 160px;
-  }
   .process-grid {
     grid-template-columns: 1fr;
   }
@@ -1059,6 +1050,7 @@
     padding: 28px 20px;
   }
 }
+
 
 /* ==========================================================================
    11. Custom Banner Templates (Design 01 & 02 with MedAgg Logo Pink Colors)
