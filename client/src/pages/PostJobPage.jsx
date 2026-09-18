@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { SEO } from '../components/common/SEO';
 import { ConfirmDeleteModal } from '../components/careers/ConfirmDeleteModal';
-import { addJob, getJobs, deleteJob, parseRawJD } from '../services/jobsService';
+import { addJob, getJobs, deleteJob, updateJob, parseRawJD } from '../services/jobsService';
 import { 
   Sparkles, 
   PlusCircle, 
@@ -30,6 +30,9 @@ export const PostJobPage = () => {
   const [deletingJob, setDeletingJob] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
+  // Edit job state
+  const [editingJobId, setEditingJobId] = useState(null);
+
   // Load published jobs on mount and after changes
   useEffect(() => {
     setPublishedJobs(getJobs());
@@ -46,6 +49,9 @@ export const PostJobPage = () => {
     setPublishedJobs(updated);
     setIsDeleteModalOpen(false);
     setDeletingJob(null);
+    if (editingJobId === jobId) {
+      handleCancelEdit();
+    }
   };
 
   const [formData, setFormData] = useState({
@@ -70,6 +76,54 @@ export const PostJobPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleEditJob = (e, job) => {
+    e.stopPropagation();
+    setEditingJobId(job.id);
+
+    const parseStringList = (val) => {
+      if (Array.isArray(val)) return val.join('\n');
+      return val || '';
+    };
+
+    setFormData({
+      title: job.title || '',
+      department: job.department || 'Advisory',
+      location: job.location || 'Chennai / Hybrid',
+      type: job.type || 'Full-time',
+      experience: job.experience || '3+ Years',
+      salary: job.salary || '',
+      shortDesc: job.shortDesc || '',
+      fullDesc: job.fullDesc || '',
+      requirements: parseStringList(job.requirements),
+      responsibilities: parseStringList(job.responsibilities),
+      perks: parseStringList(job.perks),
+      contactEmail: job.contactEmail || 'careers@medaggventures.com',
+      applyUrl: job.applyUrl || '',
+    });
+
+    setActiveTab('form');
+    window.scrollTo({ top: 250, behavior: 'smooth' });
+  };
+
+  const handleCancelEdit = () => {
+    setEditingJobId(null);
+    setFormData({
+      title: '',
+      department: 'Advisory',
+      location: 'Chennai / Hybrid',
+      type: 'Full-time',
+      experience: '3+ Years',
+      salary: '',
+      shortDesc: '',
+      fullDesc: '',
+      requirements: '',
+      responsibilities: '',
+      perks: '',
+      contactEmail: 'careers@medaggventures.com',
+      applyUrl: '',
+    });
   };
 
   const handleSmartImport = () => {
@@ -101,7 +155,12 @@ export const PostJobPage = () => {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      addJob(formData);
+      if (editingJobId) {
+        updateJob(editingJobId, formData);
+        setEditingJobId(null);
+      } else {
+        addJob(formData);
+      }
       setIsSubmitting(false);
       setSuccessMsg(true);
       // Refresh published jobs list
@@ -360,6 +419,43 @@ export const PostJobPage = () => {
                       </div>
                     )}
 
+                    {/* EDITING MODE BANNER */}
+                    {editingJobId && (
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '12px 18px',
+                          backgroundColor: '#eff6ff',
+                          border: '1px solid #93c5fd',
+                          borderRadius: '12px',
+                          color: '#1e40af',
+                          fontSize: '0.88rem',
+                          fontWeight: 600,
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <Edit3 size={18} />
+                          <span>Editing Job Listing: <strong>{formData.title || 'Untitled'}</strong></span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleCancelEdit}
+                          style={{
+                            border: 'none',
+                            background: 'transparent',
+                            color: '#e11d48',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            fontSize: '0.82rem',
+                          }}
+                        >
+                          ✕ Cancel Edit
+                        </button>
+                      </div>
+                    )}
+
                     {/* MAIN FORM */}
                     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                       <div>
@@ -567,6 +663,16 @@ export const PostJobPage = () => {
 
                       {/* ACTIONS */}
                       <div className="post-job-actions" style={{ marginTop: '16px', display: 'flex', gap: '16px', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                        {editingJobId && (
+                          <button
+                            type="button"
+                            className="btn btn-outline"
+                            onClick={handleCancelEdit}
+                            style={{ color: '#e11d48', borderColor: '#fecdd3' }}
+                          >
+                            Cancel Edit
+                          </button>
+                        )}
                         <button
                           type="button"
                           className="btn btn-outline"
@@ -580,8 +686,8 @@ export const PostJobPage = () => {
                           disabled={isSubmitting}
                           style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
                         >
-                          <PlusCircle size={18} />
-                          <span>{isSubmitting ? 'Publishing...' : 'Publish Job Live'}</span>
+                          {editingJobId ? <Edit3 size={18} /> : <PlusCircle size={18} />}
+                          <span>{isSubmitting ? 'Saving...' : editingJobId ? 'Save Changes' : 'Publish Job Live'}</span>
                         </button>
                       </div>
                     </form>
@@ -901,28 +1007,52 @@ export const PostJobPage = () => {
                           >
                             ● LIVE
                           </span>
-                          <button
-                            type="button"
-                            onClick={(e) => handleOpenDeleteModal(e, job)}
-                            title="Remove this job listing"
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '5px',
-                              padding: '5px 10px',
-                              border: '1px solid #fecdd3',
-                              backgroundColor: '#fff1f2',
-                              color: '#e11d48',
-                              borderRadius: '8px',
-                              cursor: 'pointer',
-                              fontSize: '0.75rem',
-                              fontWeight: 600,
-                              transition: 'all 0.2s',
-                            }}
-                          >
-                            <Trash2 size={13} />
-                            Remove
-                          </button>
+                          <div style={{ display: 'flex', gap: '6px' }}>
+                            <button
+                              type="button"
+                              onClick={(e) => handleEditJob(e, job)}
+                              title="Edit this job listing"
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                                padding: '5px 10px',
+                                border: '1px solid #bfdbfe',
+                                backgroundColor: '#eff6ff',
+                                color: '#1d4ed8',
+                                borderRadius: '8px',
+                                cursor: 'pointer',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                transition: 'all 0.2s',
+                              }}
+                            >
+                              <Edit3 size={13} />
+                              Edit
+                            </button>
+                            <button
+                              type="button"
+                              onClick={(e) => handleOpenDeleteModal(e, job)}
+                              title="Remove this job listing"
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                                padding: '5px 10px',
+                                border: '1px solid #fecdd3',
+                                backgroundColor: '#fff1f2',
+                                color: '#e11d48',
+                                borderRadius: '8px',
+                                cursor: 'pointer',
+                                fontSize: '0.75rem',
+                                fontWeight: 600,
+                                transition: 'all 0.2s',
+                              }}
+                            >
+                              <Trash2 size={13} />
+                              Remove
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ))

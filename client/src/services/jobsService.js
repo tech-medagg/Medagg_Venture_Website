@@ -185,3 +185,64 @@ export const deleteJob = (jobId) => {
   }
 };
 
+/**
+ * Update an existing job listing
+ * @param {string} jobId 
+ * @param {Object} jobInput 
+ */
+export const updateJob = (jobId, jobInput) => {
+  try {
+    const parseArray = (input) => {
+      if (Array.isArray(input)) return input;
+      return String(input || '')
+        .split('\n')
+        .map((r) => r.trim())
+        .filter(Boolean);
+    };
+
+    const reqArray = parseArray(jobInput.requirements);
+    const respArray = parseArray(jobInput.responsibilities);
+    const perksArray = parseArray(jobInput.perks);
+
+    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const currentCustom = stored ? JSON.parse(stored) : [];
+    const existingIndex = currentCustom.findIndex((j) => j.id === jobId);
+
+    const formattedJob = {
+      id: jobId,
+      title: jobInput.title ? jobInput.title.trim() : 'Job Title',
+      department: jobInput.department || 'Advisory',
+      location: jobInput.location || 'Chennai / Hybrid',
+      type: jobInput.type || 'Full-time',
+      experience: jobInput.experience || '2+ Years',
+      salary: jobInput.salary ? jobInput.salary.trim() : '',
+      subtitle: jobInput.subtitle || 'Career Opportunity',
+      shortDesc: jobInput.shortDesc || jobInput.title,
+      fullDesc: jobInput.fullDesc || jobInput.shortDesc || jobInput.title,
+      requirements: reqArray.length > 0 ? reqArray : ['Relevant industry experience', 'Strong analytical & communication skills'],
+      responsibilities: respArray.length > 0 ? respArray : [],
+      perks: perksArray.length > 0 ? perksArray : [],
+      contactEmail: jobInput.contactEmail ? jobInput.contactEmail.trim() : 'careers@medaggventures.com',
+      applyUrl: jobInput.applyUrl ? jobInput.applyUrl.trim() : '',
+      isCustom: true,
+      postedAt: existingIndex !== -1 ? (currentCustom[existingIndex].postedAt || new Date().toISOString()) : new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    let updatedCustom;
+    if (existingIndex !== -1) {
+      updatedCustom = [...currentCustom];
+      updatedCustom[existingIndex] = formattedJob;
+    } else {
+      updatedCustom = [formattedJob, ...currentCustom];
+    }
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCustom));
+    return getJobs();
+  } catch (err) {
+    console.error('[JobsService] Error updating job:', err);
+    return getJobs();
+  }
+};
+
+
