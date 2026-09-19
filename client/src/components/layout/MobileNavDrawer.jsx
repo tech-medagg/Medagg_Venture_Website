@@ -153,7 +153,7 @@ export const MobileNavDrawer = ({ isOpen, onClose }) => {
             <div
               className="mobile-nav-accordion-body"
               style={{
-                maxHeight: openSubmenu === 'services' ? '280px' : '0',
+                maxHeight: openSubmenu === 'services' ? '350px' : '0',
               }}
             >
               <div className="mobile-nav-sub-list">
@@ -184,6 +184,13 @@ export const MobileNavDrawer = ({ isOpen, onClose }) => {
                   onClick={onClose}
                 >
                   Channel Partnerships
+                </NavLink>
+                <NavLink
+                  to="/digital-marketing"
+                  className={({ isActive }) => `mobile-nav-sub-link ${isActive ? 'active' : ''}`}
+                  onClick={onClose}
+                >
+                  Digital Marketing
                 </NavLink>
               </div>
             </div>

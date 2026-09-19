@@ -9,6 +9,7 @@ import { StrategicConsultingPage } from './pages/StrategicConsultingPage';
 import { TransactionAdvisoryPage } from './pages/TransactionAdvisoryPage';
 import { OmContractsPage } from './pages/OmContractsPage';
 import { ChannelPartnershipsPage } from './pages/ChannelPartnershipsPage';
+import { DigitalMarketingPage } from './pages/DigitalMarketingPage';
 import { InvestmentsPage } from './pages/InvestmentsPage';
 import { CaseStudyPage } from './pages/CaseStudyPage';
 import { CareersPage } from './pages/CareersPage';
@@ -45,6 +46,10 @@ export const App = () => {
           <Route path="/channel-partnerships" element={<ChannelPartnershipsPage />} />
           <Route path="/channel-partnerships.html" element={<ChannelPartnershipsPage />} />
           <Route path="/services/channel-partnerships" element={<ChannelPartnershipsPage />} />
+
+          <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
+          <Route path="/digital-marketing.html" element={<DigitalMarketingPage />} />
+          <Route path="/services/digital-marketing" element={<DigitalMarketingPage />} />
 
           {/* Portfolio & Case Studies */}
           <Route path="/investments" element={<InvestmentsPage />} />

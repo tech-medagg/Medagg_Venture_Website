@@ -30,6 +30,7 @@ export const Footer = () => {
               <Link to="/about-us" className="footer-link">About Us</Link>
               <Link to="/careers" className="footer-link">Careers</Link>
               <Link to="/investments" className="footer-link">Strategic Investments</Link>
+              <Link to="/digital-marketing" className="footer-link">Digital Marketing</Link>
               {/* <a
                 href="https://www.medagg.com/blogs/"
                 target="_blank"
