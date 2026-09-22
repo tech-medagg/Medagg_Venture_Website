@@ -106,9 +106,7 @@ export const Header = ({ onToggleMobileNav, isMobileNavOpen }) => {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/digital-marketing" className={({ isActive }) => `nav-link ${isActive ? 'is-active active' : ''}`}>
-                DIGITAL MARKETING
-              </NavLink>
+              <a href="/digital-marketing" className="nav-link">DIGITAL MARKETING</a>
             </li>
 
             <li className="nav-item">
